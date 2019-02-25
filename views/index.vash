@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>@model.title</title>
+</head>
+
+<body>
+    <h1>@model.h1Content</h1>
+    <p>
+        Here is some more content rendered using vash
+    </p>
+</body>
+
+</html>
