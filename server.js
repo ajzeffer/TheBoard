@@ -1,22 +1,16 @@
 var http = require('http');
 var express = require('express');
 var app = express();
+
+// view engine 
 app.set('view engine', "vash");
-app.get('/', (req, res) => {
-    res.render('index', { title: 'jade rendered page', h1Content: 'my cool h1' });
-});
 
-app.get('/api/users', (req, res) => {
-    let users = [
-        { name: "adam" },
-        { name: "beth" },
-        { name: "ayden" },
-        { name: "ashtyn" },
-    ];
-    res.send(users);
-});
+// controllers & routes 
+var controlers = require('./controllers');
+controlers.init(app);
 
-
+// new up server 
 var server = http.createServer(app);
 
+// listen on 3000
 server.listen(3000);

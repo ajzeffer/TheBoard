@@ -1,15 +1,17 @@
-<!doctype html>
-<html>
-
-<head>
-    <title>@model.title</title>
-</head>
-
-<body>
-    <h1>@model.h1Content</h1>
-    <p>
-        Here is some more content rendered using vash
-    </p>
-</body>
-
-</html>
+@html.extend('layout', function(model) {
+    @html.block('body', function(model) {
+        <h1>@model.h1Content</h1>
+        <p>
+            Here is some more content rendered using vash
+        </p>
+        @if(model.error){
+            <span class="error">@model.error</span>
+        }
+        @model.categories.forEach((category) => {
+            <div>
+            <span>@(category.notes ? category.notes.length : 0)</span> -
+            <a href="#">@category.name</a>
+            </div>
+        })
+    })
+})
