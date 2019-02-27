@@ -4,7 +4,7 @@ var app = express();
 
 // view engine 
 app.set('view engine', "vash");
-
+app.use(express.static(__dirname + '/public'));
 // controllers & routes 
 var controlers = require('./controllers');
 controlers.init(app);

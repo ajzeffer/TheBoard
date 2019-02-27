@@ -3,10 +3,15 @@
 
 <head>
     <title>@model.title | The Board </title>
+    <link href="/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link href="/css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div>@html.block('body') </div>
+    <div class="container">
+        @html.block('body') 
+    </div>
 
 </body>
 
